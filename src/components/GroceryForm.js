@@ -2,8 +2,13 @@ import React from 'react';
 
 const GroceryForm = (props) => {
   return (
-    <form onSubmit={ (event) => { event.preventDefault(); alert('Form was submitted'); } }>
-      <input type="text" placeholder="name of grocery" />
+    <form onSubmit={props.handleFormSubmit}>
+      <input
+        type="text"
+        placeholder="name of grocery"
+        value={props.name}
+        onChange={props.handleChange}
+      />
       <input type="submit" value="Add To List" />
     </form>
   );
